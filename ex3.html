@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Page title -->
+    <title>Length Conversion</title>
+    <!-- Link to Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  </head>
+  <body>
+    <!-- Container for the page content -->
+    <div class="container mt-5">
+      <!-- Heading for the page -->
+      <h1 class="mb-4">Length Conversion</h1>
+      
+      <!-- Form for inputting length in centimeters -->
+      <form>
+        <div class="form-group">
+          <label for="cmInput">Enter length in centimeters:</label>
+          <input type="number" class="form-control" id="cmInput" name="cmInput">
+        </div>
+        
+        <!-- Button for converting input to feet -->
+        <button type="button" class="btn btn-primary" onclick="convertToFeet()">Convert to Feet</button>
+      </form>
+      
+      <br>
+      
+      <!-- Div for displaying converted length in feet -->
+      <div id="feetOutput"></div>
+    </div>
+    
+    <!-- Scripts for jQuery, Popper.js, and Bootstrap JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper-base.min.js"
+        integrity="sha384-CPhZK3g2+NYWzmkJ0oszklmhIufwURR0+VEKH34HzLrbs1J5ZSZ+5ZMJWzOiOJSJ"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    
+    <!-- JavaScript for converting centimeters to feet -->
+    <script>
+      function convertToFeet() {
+        // Get the value of the input in centimeters
+        const cmInput = document.getElementById('cmInput').value;
+        
+        // Convert centimeters to feet
+        const feet = cmInput / 30.48;
+        
+        // Display the converted length in feet
+        document.getElementById('feetOutput').innerHTML = feet.toFixed(2) + ' feet';
+      }
+    </script>
+  </body>
+</html>
